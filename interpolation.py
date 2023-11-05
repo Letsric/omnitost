@@ -1,4 +1,6 @@
-def find_location(number: float, temperature_conversion_curve: [[int, int], ...]):
+def find_location(
+    number: float, temperature_conversion_curve: list[list[int]]
+) -> tuple[int, int] | int:
     """finds the location of a number in temperature_conversion_curve.
     For more information, read the documentation for interpolation
 
@@ -12,9 +14,10 @@ def find_location(number: float, temperature_conversion_curve: [[int, int], ...]
         a = val[0] - number
         if a > 0:
             return idx - 1, idx
+    raise ValueError(f"number {number} not in temperature_conversion_curve")
 
 
-def get_temperature(voltage: float, temperature_conversion_curve: [[int, int], ...]):
+def get_temperature(voltage: float, temperature_conversion_curve: list[list[int]]):
     """calculates the temperature for a given voltage.
     For more information, read the documentation for interpolation
 
@@ -24,7 +27,7 @@ def get_temperature(voltage: float, temperature_conversion_curve: [[int, int], .
     """
     location = find_location(voltage, temperature_conversion_curve)
     if isinstance(location, int):
-        # If there's an exact match in the curve, we already found the temperature
+        # If there's an exact match in the curve, we already found the temperature, or there was an error
         return temperature_conversion_curve[location][1]
 
     prv, nxt = location
