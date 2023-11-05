@@ -20,7 +20,7 @@ This is **subject to change!**
 - Raspberry Pi Pico
 - Screwdriver
 - SH1106 I2C OLED display with a resolution of 128 x 64 that fits in the OptiGrill
-    - I recommend [this one from AZ-Delivery](https://www.az-delivery.de/en/products/1-3zoll-i2c-oled-display), but other ones should work as well
+  - I recommend [this one from AZ-Delivery](https://www.az-delivery.de/en/products/1-3zoll-i2c-oled-display), but other ones should work as well
 - Soldering iron
 - Tefal Optigrill (obviously)
 
