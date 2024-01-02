@@ -10,6 +10,7 @@ This project is in its baby steps and **not yet functional**! Almost nothing is 
 
 - How to install (Not written yet)
 - [Interpolation](docs/Interpolation.pdf)
+- [Optigrill internals (German)](docs/Optigrill-Plan.jpg)
 
 ## Requirements
 
