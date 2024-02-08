@@ -6,7 +6,7 @@ def find_location(
 
     :param number: the value, for which the location should be determent
     :param temperature_conversion_curve: array of arrays with the voltage to degrees curve
-    :return: a tuple of the indexes from the number below and above the input, or one number if there's an exact match
+    :returns: a tuple of the indexes from the number below and above the input, or one number if there's an exact match
     """
     for idx, val in enumerate(temperature_conversion_curve):
         if val[0] == number:
@@ -23,16 +23,15 @@ def get_temperature(voltage: float, temperature_conversion_curve: list[list[int]
 
     :param voltage: the voltage for which the temperature should be calculated in V
     :param temperature_conversion_curve: array of arrays with the voltage to degrees curve
-    :return: the temperature in °C
+    :returns: the temperature in °C
     """
     location = find_location(voltage, temperature_conversion_curve)
     if isinstance(location, int):
         # If there's an exact match in the curve, we already found the temperature, or there was an error
         return temperature_conversion_curve[location][1]
 
-    prv, nxt = location
-    prv = temperature_conversion_curve[prv]
-    nxt = temperature_conversion_curve[nxt]
+    prv = temperature_conversion_curve[location[0]]  # Previous element in curve
+    nxt = temperature_conversion_curve[location[1]]  # Next element in curve
 
     x1 = prv[0]
     x = voltage
