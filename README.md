@@ -27,5 +27,5 @@ This is **subject to change!**
 
 ### Software
 
-- CircuitPython
-- interpolation.mpy (included)
+- [CircuitPython](https://circuitpython.org/)
+- [Poetry](https://python-poetry.org/)
